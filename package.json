@@ -1,9 +1,10 @@
 {
   "name": "rpginia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "RPGinia npm version",
   "main": "index.js",
   "scripts": {
+    "start": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ShcherbaDev/rpginia-npm/issues"
   },
-  "homepage": "https://github.com/ShcherbaDev/rpginia-npm#readme"
+  "homepage": "https://github.com/ShcherbaDev/rpginia-npm#readme",
+  "dependencies": {
+    "serve": "^10.1.1"
+  }
 }
