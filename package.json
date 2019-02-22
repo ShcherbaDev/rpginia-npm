@@ -1,23 +1,36 @@
 {
   "name": "rpginia",
-  "version": "0.0.2",
-  "description": "RPGinia npm version",
+  "version": "0.0.3",
+  "description": "RPGinia: npm version (frozen)",
   "main": "index.js",
+  "bin": {
+    "rpginia": "lib/cli.js"
+  },
   "scripts": {
-    "start": "serve .",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShcherbaDev/rpginia-npm.git"
   },
-  "author": "Andrey Shcherbakov",
-  "license": "ISC",
+  "author": "Andrey Shcherbakov <andrey.shcherbakov05@gmail.com>",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib/"
+  },
   "bugs": {
     "url": "https://github.com/ShcherbaDev/rpginia-npm/issues"
   },
   "homepage": "https://github.com/ShcherbaDev/rpginia-npm#readme",
   "dependencies": {
+    "chalk": "^2.4.2",
+    "path": "^0.12.7",
     "serve": "^10.1.1"
+  },
+  "devDependencies": {
+    "commander": "^2.19.0",
+    "express": "^4.16.4",
+    "http-server": "^0.11.1"
   }
 }
