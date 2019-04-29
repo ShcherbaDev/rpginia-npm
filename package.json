@@ -1,14 +1,21 @@
 {
   "name": "rpginia",
-  "version": "0.0.3",
-  "description": "RPGinia: npm version (frozen)",
-  "main": "index.js",
-  "bin": {
-    "rpginia": "lib/cli.js"
-  },
+  "version": "1.0.0",
+  "description": "Javascript 2D game engine",
+  "bin": "package/cli.js",
+  "main": "package/engine/RPGinia.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint package/",
+    "lint:fix": "eslint package/ --fix",
+    "docs": "jsdoc ./package/engine/ -P ./package.json -R ./README.md -d ./docs/",
+    "test": "mocha tests/main.test.js",
+    "prepublishOnly": "npm run lint && npm test && npm docs"
+  },
+  "directories": {
+    "lib": "package/",
+    "doc": "docs/",
+    "example": "examples/",
+    "test": "tests/"
   },
   "repository": {
     "type": "git",
@@ -16,21 +23,31 @@
   },
   "author": "Andrey Shcherbakov <andrey.shcherbakov05@gmail.com>",
   "license": "MIT",
-  "directories": {
-    "lib": "lib/"
-  },
   "bugs": {
     "url": "https://github.com/ShcherbaDev/rpginia-npm/issues"
   },
   "homepage": "https://github.com/ShcherbaDev/rpginia-npm#readme",
   "dependencies": {
+    "boxen": "^3.1.0",
     "chalk": "^2.4.2",
-    "path": "^0.12.7",
-    "serve": "^10.1.1"
-  },
-  "devDependencies": {
     "commander": "^2.19.0",
     "express": "^4.16.4",
-    "http-server": "^0.11.1"
+    "jsdoc": "^3.5.5",
+    "listr": "^0.14.3",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7",
+    "rxjs": "^6.4.0",
+    "serve": "^10.1.1",
+    "mocha": "^6.1.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "http-server": "^0.11.1",
+    "mocha-jsdom": "^2.0.0"
   }
 }
