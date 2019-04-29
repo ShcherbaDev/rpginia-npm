@@ -1,7 +1,7 @@
 const chai = require('chai');
 const jsdom = require('mocha-jsdom');
 
-const RPGinia = require('../package/engine/RPGinia');
+const RPGinia = require('../src/engine/RPGinia');
 
 const {assert, expect} = chai;
 
