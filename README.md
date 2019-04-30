@@ -25,4 +25,6 @@ Npm page: https://www.npmjs.com/package/rpginia
 
 Github page: https://github.com/ShcherbaDev/rpginia-npm
 
+API documentation: https://shcherbadev.github.io/rpginia-npm/rpginia/1.0.0
+
 Non-npm engine repository: https://github.com/ShcherbaDev/RPGinia
