@@ -8,6 +8,10 @@ class FullscreenManager {
 		this._init();
 	}
 
+	_doOnToggleFullscreenEvent(e) {
+		return this._app.onToggleFullscreen ? this._app.onToggleFullscreen(e) : null;
+	}
+
 	_init() {
 		document.addEventListener('keydown', (e) => {
 			if (e.keyCode === this._toogleFullscreenKeyCode) {
@@ -20,19 +24,16 @@ class FullscreenManager {
 				if (!document.fullscreenElement) {
 					this._isFullscreenEnabled = true;
 					document.documentElement.requestFullscreen();
+
+					this._doOnToggleFullscreenEvent(e);
 				}
 				else if (document.exitFullscreen) {
 					this._isFullscreenEnabled = false;
 					document.exitFullscreen();
+					
+					this._doOnToggleFullscreenEvent(e);
 				}
 			}
-		});
-
-		document.addEventListener('fullscreenchange', (e) => {
-			this._app._canvas.width = '100%';
-			this._app._canvas.height = '100%';
-			
-			return this._app.onToggleFullscreen ? this._app.onToggleFullscreen(e) : null;
 		});
 	}
 }
