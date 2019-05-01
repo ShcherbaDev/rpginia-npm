@@ -11,6 +11,13 @@ Version of non-npm editon: [![non-npm version](https://badge.fury.io/gh/Shcherba
 ## Introduction
 RPGinia using for creating 2D games using Javascript. With his help you can create your own masterpiece of game industry. Well suited for indie developers as it's easy to learn.
 
+### Advantages over non-npm version
+1. Simple install.
+2. Asynchronous file loader.
+3. Simpler class structure.
+4. Unit tests included.
+5. `eslint` included.
+
 ## Installation (please don't use until release)
 To install RPGinia, firstly you need to [create](https://docs.npmjs.com/creating-a-package-json-file) a `package.json` file, then type in console `npm install rpginia` to install engine.
 

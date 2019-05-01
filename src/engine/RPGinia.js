@@ -1,7 +1,11 @@
+const EventEmitter = require('wolfy87-eventemitter');
 const FullscreenManager = require('./FullscreenManager');
 
+const Loaders = require('./Loaders');
+const World = require('./World');
+
 /**
- * Main engine class.
+ * Main engine class which is using to create a new app. See {@tutorial test-tutorial} for details.
  * @global
  * @constructor
  * 
@@ -92,7 +96,7 @@ class RPGinia {
 		 * RPGinia app path
 		 * @private
 		 */
-		this._appPath = environmentSettings.appPath || __dirname;
+		this._appPath = environmentSettings.appPath || window.location.href;
 
 		/**
 		 * Variables for saving game data.
@@ -100,8 +104,12 @@ class RPGinia {
 		 */
 		this._globalVariables = [];
 
-		this.onToggleFullscreen = null;
+		this._eventEmitter = new EventEmitter();
 
+		/**
+		 * Connecting fullscreen manager.
+		 * @private
+		 */
 		this._fullScreen = new FullscreenManager(this);
 	}
 
@@ -176,6 +184,10 @@ class RPGinia {
 	 * @returns {array}
 	 */
 	get globalVariables() { return this._globalVariables; }
+
+	get eventEmitter() { return this._eventEmitter; }
 }
 
 module.exports = RPGinia;
+module.exports.Loaders = Loaders;
+module.exports.World = World;

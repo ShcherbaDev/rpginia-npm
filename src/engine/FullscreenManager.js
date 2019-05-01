@@ -1,4 +1,14 @@
+/**
+ * Fullscreen manager.
+ * @memberof RPGinia
+ * @private
+ */
 class FullscreenManager {
+	/**
+	 * Create new fullscreen manager.
+	 * @param {RPGinia} rpginiaApp - Your RPGinia app.
+	 * @hideconstructor
+	 */
 	constructor(rpginiaApp) {
 		this._app = rpginiaApp;
 	
@@ -8,31 +18,31 @@ class FullscreenManager {
 		this._init();
 	}
 
-	_doOnToggleFullscreenEvent(e) {
-		return this._app.onToggleFullscreen ? this._app.onToggleFullscreen(e) : null;
-	}
-
+	/**
+	 * Initialize events.
+	 * @private
+	 */
 	_init() {
-		document.addEventListener('keydown', (e) => {
-			if (e.keyCode === this._toogleFullscreenKeyCode) {
-				e.preventDefault();
+		document.addEventListener('keydown', (event) => {
+			const {keyCode} = event;
+
+			if (keyCode === this._toogleFullscreenKeyCode) {
+				event.preventDefault();
 			}
 		});
 
-		document.addEventListener('keyup', (e) => {
-			if (e.keyCode === this._toogleFullscreenKeyCode) {
+		document.addEventListener('keyup', (event) => {
+			if (event.keyCode === this._toogleFullscreenKeyCode) {
 				if (!document.fullscreenElement) {
 					this._isFullscreenEnabled = true;
 					document.documentElement.requestFullscreen();
-
-					this._doOnToggleFullscreenEvent(e);
 				}
 				else if (document.exitFullscreen) {
 					this._isFullscreenEnabled = false;
 					document.exitFullscreen();
-					
-					this._doOnToggleFullscreenEvent(e);
 				}
+
+				this._app._eventEmitter.emitEvent('toggleFullscreen', [event]);
 			}
 		});
 	}

@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "docs": "jsdoc ./src/engine/ -P ./src.json -R ./README.md -d ./docs/",
+    "docs": "jsdoc ./src/engine/ -R ./README.md -d ./docs/api -u ./docs/tutorials",
     "test": "mocha tests/main.test.js",
     "prepublishOnly": "npm run lint && npm test && npm docs"
   },
@@ -36,7 +36,8 @@
     "listr": "^0.14.3",
     "mkdirp": "^0.5.1",
     "mocha": "^6.1.4",
-    "rxjs": "^6.4.0"
+    "rxjs": "^6.4.0",
+    "wolfy87-eventemitter": "^5.2.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",

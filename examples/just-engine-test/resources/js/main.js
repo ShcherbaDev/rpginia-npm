@@ -9,8 +9,17 @@ const app = new RPGinia(
     }
 );
 
-app.onToggleFullscreen = (e) => {
-    console.log('Custom event', e)
-}
+const loaders = new RPGinia.Loaders(app);
+const world = new RPGinia.World(app);
 
-console.log(app);
+;(async () => {
+    const levelList = [
+        '/resources/levels/test-level/testLevelView.json',
+        '/resources/levels/test-level.1/testLevelView.json'
+    ];
+
+    setTimeout(async () => {
+        await loaders.jsonFile(levelList[0]); // Will load last because was setted interval.
+    }, 5000);
+    await loaders.jsonFile(levelList[1]); // Will load first.
+})();
