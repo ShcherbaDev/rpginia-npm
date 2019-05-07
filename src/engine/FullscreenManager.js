@@ -6,8 +6,7 @@
 class FullscreenManager {
 	/**
 	 * Create new fullscreen manager.
-	 * @param {RPGinia} rpginiaApp - Your RPGinia app.
-	 * @hideconstructor
+	 * @param {RPGinia} rpginiaApp - RPGinia app.
 	 */
 	constructor(rpginiaApp) {
 		this._app = rpginiaApp;
@@ -25,7 +24,7 @@ class FullscreenManager {
 	_init() {
 		document.addEventListener('keydown', (event) => {
 			const {keyCode} = event;
-
+			
 			if (keyCode === this._toogleFullscreenKeyCode) {
 				event.preventDefault();
 			}
@@ -42,10 +41,17 @@ class FullscreenManager {
 					document.exitFullscreen();
 				}
 
+				/**
+				 * My event.
+				 * 
+				 * @event RPGinia#toggleFullscreen
+				 * @type {KeyboardEvent}
+				 * @property {object} event - event...
+				 */
 				this._app._eventEmitter.emitEvent('toggleFullscreen', [event]);
 			}
 		});
 	}
 }
 
-module.exports = FullscreenManager;
+export default FullscreenManager;

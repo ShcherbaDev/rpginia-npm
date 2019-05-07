@@ -1,8 +1,7 @@
-const EventEmitter = require('wolfy87-eventemitter');
-const FullscreenManager = require('./FullscreenManager');
-
-const Loaders = require('./Loaders');
-const World = require('./World');
+import * as EventEmitter from 'wolfy87-eventemitter';
+import FullscreenManager from './FullscreenManager';
+import Loaders from './Loaders';
+import World from './World';
 
 /**
  * Main engine class which is using to create a new app. See {@tutorial test-tutorial} for details.
@@ -104,6 +103,10 @@ class RPGinia {
 		 */
 		this._globalVariables = [];
 
+		/**
+		 * An event emitter.
+		 * @private
+		 */
 		this._eventEmitter = new EventEmitter();
 
 		/**
@@ -185,9 +188,15 @@ class RPGinia {
 	 */
 	get globalVariables() { return this._globalVariables; }
 
+	/**
+	 * Event emitter.
+	 * @readonly
+	 */
 	get eventEmitter() { return this._eventEmitter; }
+
+	static get Loaders() { return Loaders; }
+	
+	static get World() { return World; }
 }
 
-module.exports = RPGinia;
-module.exports.Loaders = Loaders;
-module.exports.World = World;
+export default RPGinia;

@@ -20,6 +20,7 @@
 		"brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
 		"object-curly-newline": ["error", { "multiline": true }],
 		"no-console": ["error", { "allow": ["log", "info", "warn", "error"] }],
+		"no-eval" : ["error", { "allowIndirect": true }],
 
 		"no-tabs": "off",
 		"max-len": "off",

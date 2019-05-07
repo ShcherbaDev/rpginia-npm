@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: test-tutorial</title>
+    <title>JSDoc: Source: Level.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,25 +17,55 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: test-tutorial</h1>
+    <h1 class="page-title">Source: Level.js</h1>
 
-    <section>
-
-<header>
     
 
-    <h2>test-tutorial</h2>
-</header>
 
-<article>
-    <h1>Test tutorial</h1>
-<p>Lorem impsum dolor sit amet...</p>
-<pre class="prettyprint source lang-javascript"><code>// Code example
-console.log('hello, world!');
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>class Level {
+	/**
+	 * Possible settings:
+	 * name, background, spriteSheetPath (alias: spriteSheet), spritesPositionPath (alias: spritesPosition)
+	 */ 
+	constructor(settings) {
+		const { name, background, spriteSheetPath, spriteSheet, spritesPositionPath, spritesPosition } = settings;
+
+		this._name = name;
+		this._background = background || '#000000';
+		this._spriteSheetPath = spriteSheetPath || spriteSheet;
+		this._spritesPositionPath = spritesPositionPath || spritesPosition;
+
+		this._isActive = false;
+	}
+
+	render() {
+		return this._isActive;
+	}
+
+	get name() { return this._name; }
+
+	get background() { return this._background; }
+
+	get spriteSheetPath() { return this._spriteSheetPath; }
+
+	get spritesPositionPath() { return this._spritesPositionPath; }
+
+	get isActive() { return this._isActive; }
+
+	set isActive(newActiveValue) { this._isActive = newActiveValue; }
+}
+
+export default Level;
 </code></pre>
-</article>
+        </article>
+    </section>
 
-</section>
+
+
 
 </div>
 

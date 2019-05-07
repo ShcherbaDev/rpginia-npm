@@ -1,4 +1,5 @@
-const RPGinia = require('rpginia');
+// const RPGinia = require('rpginia');
+import RPGinia from 'rpginia';
 
 const app = new RPGinia(
     {
@@ -14,12 +15,25 @@ const world = new RPGinia.World(app);
 
 ;(async () => {
     const levelList = [
-        '/resources/levels/test-level/testLevelView.json',
-        '/resources/levels/test-level.1/testLevelView.json'
+        '/resources/levels/es6level/es6Level.js'
     ];
 
-    setTimeout(async () => {
-        await loaders.jsonFile(levelList[0]); // Will load last because was setted interval.
-    }, 5000);
-    await loaders.jsonFile(levelList[1]); // Will load first.
+    app.eventEmitter.on('toggleFullscreen', (e) => {
+        console.log(e);
+    });
+
+    world.setLevel(await loaders.loadLevel(levelList[0]));
+
+    world.render();
+
+    // // Load and set level.
+    // world.setLevel(await loaders.loadLevel(levelList[0]));
+
+    // // Separator
+    // console.log('----------');
+
+    // // Load a spritesheet JSON file.
+    // console.log(await loaders.loadSpriteSheet('/resources/sprites/spriteSheet.json'));
+
+    // console.log('File list:\n', loaders.files, '\nLevel list:\n', world._levelManager._levelList);
 })();

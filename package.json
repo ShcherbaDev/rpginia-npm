@@ -37,6 +37,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^6.1.4",
     "rxjs": "^6.4.0",
+    "scriptjs": "^2.5.9",
     "wolfy87-eventemitter": "^5.2.6"
   },
   "devDependencies": {

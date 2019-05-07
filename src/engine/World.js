@@ -1,56 +1,38 @@
+import LevelManager from './LevelManager';
+
 class World {
 	constructor(rpginiaApp) {
 		this._app = rpginiaApp;
-	
-		this._levels = [];
-		this._currentLevelId = null;
+
+		this._requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+		window.requestAnimationFrame = this._requestAnimationFrame;
+
+		this._levelManager = new LevelManager(this);
 	}
 
 	setLevel(levelObjOrName) {
-		if (typeof levelObjOrName === 'object' && !Array.isArray(levelObjOrName)) {
-			const searchedLevelId = this._levels.findIndex(level => level.settings.name === levelObjOrName.value.settings.name);
-
-			// If level with typed name was found.
-			if (searchedLevelId !== -1) {
-				throw new Error(`Level with name "${levelObjOrName.value.settings.name}" is already exist!`);	
-			}
-			else {
-				const level = levelObjOrName.value;
-
-				const {settings, elements} = level;
-
-				this._levels.push({
-					id: this._levels.length,
-					settings,
-					elements
-				});
-
-				this._currentLevelId = this._levels[this._levels.length-1].id;
-
-				if (this._app._environment === 'development') {
-					console.info(`Level "${this._levels[this._currentLevelId].settings.name}" with ID ${this._levels[this._currentLevelId].id} is now active!`);
-				}
-			}
-		}
-		else if (typeof levelObjOrName === 'string') {
-			const searchedLevelId = this._levels.findIndex(level => level.settings.name === levelObjOrName);
-
-			// If level with typed name wasn't found.
-			if (searchedLevelId === -1) {
-				throw new Error(`Level with name "${levelObjOrName}" wasn't found!`);
-			}
-			else {
-				this._currentLevelId = searchedLevelId;
-			}
-		}
-		else {
-			throw new TypeError('Argument should be a string or an object!');
-		}
+		this._levelManager.setLevel(levelObjOrName);
 	}
 
-	draw() {
-		return false;
+	render() {
+		// const levelList = this._levelManager._levelList;
+		// const activeLevel = this._levelManager.currentLevel;
+
+		function renderFunc() {
+			// Actions to load the activated scene...
+			
+			window.requestAnimationFrame(renderFunc);
+		}
+		return renderFunc();
+	}
+
+	static get LevelManager() {
+		return LevelManager;
+	}
+
+	static get Level() {
+		return LevelManager.Level;
 	}
 }
 
-module.exports = World;
+export default World;

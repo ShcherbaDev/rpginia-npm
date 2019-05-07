@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>RPGinia<span class="signature">(appSettings, environmentSettings)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Main engine class.</div>
+            <div class="class-description">Main engine class which is using to create a new app. See <a href="tutorial-test-tutorial.html">test-tutorial</a> for details.</div>
         
     
 </header>
@@ -502,23 +502,18 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="RPGinia.js.html">RPGinia.js</a>, <a href="RPGinia.js.html#line30">line 30</a>
+        <a href="RPGinia.js.html">RPGinia.js</a>, <a href="RPGinia.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
-    
-    <dt class="tag-tutorial">Tutorials:</dt>
-    <dd class="tag-tutorial">
-        <ul>
-            <li><a href="tutorial-test-tutorial.html">test-tutorial</a></li>
-        </ul>
-    </dd>
     
 
     
 
     
 </dl>
+
+
 
 
 
@@ -567,6 +562,13 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
     
 
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="RPGinia.Loaders.html">Loaders</a></dt>
+            <dd></dd>
+        </dl>
     
 
     
@@ -749,6 +751,68 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="RPGinia.js.html">RPGinia.js</a>, <a href="RPGinia.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="eventEmitter"><span class="type-signature">(readonly) </span>eventEmitter<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Event emitter.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="RPGinia.js.html">RPGinia.js</a>, <a href="RPGinia.js.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -962,6 +1026,8 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
 
 
+
+
 <h5>Returns:</h5>
 
         
@@ -1142,6 +1208,8 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
 
 
+
+
 <h5>Returns:</h5>
 
         
@@ -1183,7 +1251,7 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
     
 
     
-    <h4 class="name" id="event:onToggleFullscreen">onToggleFullscreen</h4>
+    <h4 class="name" id="event:toggleFullscreen">toggleFullscreen</h4>
     
 
     
@@ -1191,7 +1259,7 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
 
 <div class="description">
-    Event on toggling fullscreen.
+    My event.
 </div>
 
 
@@ -1202,7 +1270,7 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
     <ul>
         <li>
             
-<span class="param-type">function</span>
+<span class="param-type">KeyboardEvent</span>
 
 
         </li>
@@ -1224,6 +1292,8 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
@@ -1240,11 +1310,13 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
         <tr>
             
+                <td class="name"><code>event</code></td>
+            
 
             <td class="type">
             
                 
-<span class="param-type">KeyboardEvent</span>
+<span class="param-type">object</span>
 
 
             
@@ -1254,7 +1326,7 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
             
 
-            <td class="description last">Information about event.</td>
+            <td class="description last">event...</td>
         </tr>
 
     
@@ -1293,7 +1365,7 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="RPGinia.js.html">RPGinia.js</a>, <a href="RPGinia.js.html#line104">line 104</a>
+        <a href="FullscreenManager.js.html">FullscreenManager.js</a>, <a href="FullscreenManager.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -1303,6 +1375,8 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 
     
 </dl>
+
+
 
 
 
@@ -1333,13 +1407,13 @@ const engine = new RPGinia(undefined, undefined); // To skip argument write unde
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RPGinia.html">RPGinia</a></li></ul><h3>Events</h3><ul><li><a href="RPGinia.html#event:onToggleFullscreen">onToggleFullscreen</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-test-tutorial.html">test-tutorial</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Level.html">Level</a></li><li><a href="RPGinia.html">RPGinia</a></li><li><a href="RPGinia.Loaders.html">Loaders</a></li></ul><h3>Events</h3><ul><li><a href="RPGinia.html#event:toggleFullscreen">toggleFullscreen</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-test-tutorial.html">test-tutorial</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 30 2019 14:36:06 GMT+0300 (GMT+03:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.0</a> on Wed May 08 2019 01:28:58 GMT+0300 (GMT+03:00)
 </footer>
 
 <script> prettyPrint(); </script>
