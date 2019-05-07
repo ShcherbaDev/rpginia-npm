@@ -25,7 +25,7 @@ To install RPGinia, firstly you need to [create](https://docs.npmjs.com/creating
 Tests for npm version of engine were written using `Mocha` and `Chai`. To run them type `npm test`.
 
 ## Running `eslint`
-Npm edition of engine was written using a [code style guide](https://github.com/airbnb/javascript) by Airbnb with some of [my edits](https://github.com/ShcherbaDev/rpginia-npm/blob/master/.eslintrc.json). To run them type `npm run lint`. It will run checking code to a valid style in `package/` directory.
+Npm edition of engine was written using a [code style guide](https://github.com/airbnb/javascript) by Airbnb with some of [my edits](https://github.com/ShcherbaDev/rpginia-npm/blob/dev/.eslintrc.json). To run them type `npm run lint`. It will run checking code to a valid style in `package/` directory.
 
 ## Links
 Npm page: https://www.npmjs.com/package/rpginia
